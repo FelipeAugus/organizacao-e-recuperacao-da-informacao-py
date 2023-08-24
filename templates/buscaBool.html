@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Busca Bolleana</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+
+<body>
+    <section>
+        <form action="/buscaBool" method="post" id="container">
+            <input class="btn"type="submit" value="Buscar" />
+
+            <a href="#" id="member" value="1" onclick="addFields()" class="btn"> Add</a>
+
+            <label>Query: </label>
+            <input placeholder="Entre uma palavra" name='0_text' />
+
+        </form>
+    </section>
+    <script type='text/javascript'>
+        var countElements = 0
+        function addFields() {
+            countElements += 1
+            var container = document.getElementById("container");
+
+            var array = ["AND", "OR", "AND NOT"];
+            var selecao = document.createElement("select");
+            selecao.id = "selecao";
+            selecao.name = String(countElements) + "_boll"
+            for (var i = 0; i < array.length; i++) {
+                var option = document.createElement("option");
+                option.text = array[i];
+
+                if (array[i] != "AND NOT") option.value = array[i].toLowerCase();
+                else option.value = "not";
+                selecao.appendChild(option);
+            }
+            var input = document.createElement("input");
+            input.type = "text";
+            input.name = String(countElements) + "_text"
+
+            container.appendChild(selecao);
+            container.appendChild(input);
+            container.appendChild(document.createElement("br"));
+        }
+
+    </script>
+</body>
+
+</html>

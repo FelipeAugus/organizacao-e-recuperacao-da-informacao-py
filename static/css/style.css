@@ -1,0 +1,59 @@
+*{margin: auto;}
+
+body{ 
+	background: rgb(70, 142, 236);
+	font: normal 12pt Arial;
+}
+
+
+header, footer{
+	color: white;
+	text-align: center;
+	margin-top: 2em;
+}
+
+section{
+	text-align: center;
+	background: white;
+	border-radius: 10px;
+	padding: 15px;
+	width: 70vw;
+	min-height: 50vh;
+	margin-top: 2em;
+	box-shadow: 3px 3px 10px;
+}
+
+div{
+	margin-top: 1em;
+}
+
+/*  Botões */
+button{cursor: pointer;}
+.btn, .btn_low{
+    border: transparent;
+    border-radius: 7px;
+    background-color: #758BFD;
+    padding: 10px;
+    color: white;
+    font-size: 1rem;
+}
+.btn_low{
+    padding: 5px;
+	font-size: 0.75rem;
+	float: left;
+}
+.btn:hover, .btn_low:hover{
+    background-color: #0E356B;
+}
+
+
+/* tabela */
+table tr td { background: #f6f8f8; border-color: black; border: 2px;} 
+table tr.dif td {background: #D7ECF2;}
+
+.alert-info{
+	padding-top: 3em;
+	font-size: small;
+	text-align: right;
+}
+

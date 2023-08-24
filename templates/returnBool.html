@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Resultados da Busca</title>
+        <link rel="stylesheet" href="../static/css/style.css">
+    </head>
+    <body>
+        <form action="/buscaBool" method="get" style="float: right;"><button type="submit">VOLTAR</button></form>
+        <header>
+            <h1 id="titulo">Resultados da Busca : </h1>
+            
+        </header>
+
+        <section>
+            {% if resultList%}
+            <div><p>{{query}}</p></div>
+            <div>
+                <table border="1px" cellpadding="5px" cellspacing="0" ID="alter">
+                <tr> 
+                    <td style="background: #468EEC">Documentos </td>
+                </tr>
+            {% else %}
+            <div> Nenhum documento foi retornado!</div>
+            {% endif %}
+            
+                {% for fileName in resultList %}
+                <td>{{ fileName }}</td>
+                </tr>
+            {% endfor %}
+                </table>
+            </div>
+        </section>
+
+        <footer>
+            <p> &copy; Felipe Mamedes</p>
+        </footer>
+    </body>
+</html>
